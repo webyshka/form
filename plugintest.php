@@ -77,8 +77,8 @@ function custom_send_function() {
         registration_validation(
             $_POST['first_name'],
             $_POST['last_name'],
-            $_POST['subject'],
             $_POST['email'],
+            $_POST['subject'],
             $_POST['message']
         );
 
@@ -134,8 +134,7 @@ function create_contact_hubspot($email, $first_name, $last_name) {
         )
     );
     $post_json = json_encode($arr);
-    $hapikey = readline("Enter hapikey: (demo for the demo portal): ");
-    $endpoint = 'https://api.hubapi.com/contacts/v1/contact?hapikey=demo';
+    $endpoint = 'https://api.hubapi.com/contacts/v1/contact?hapikey=b04dc8d9-86d6-4e8d-a506-10d6a0e5425e';
     $ch = @curl_init();
     @curl_setopt($ch, CURLOPT_POST, true);
     @curl_setopt($ch, CURLOPT_POSTFIELDS, $post_json);
